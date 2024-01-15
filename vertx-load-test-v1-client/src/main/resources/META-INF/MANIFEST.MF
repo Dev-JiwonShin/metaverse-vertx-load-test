@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Main-Class: shinji.SocketClient
+Class-Path: netty-handler-proxy-4.1.94.Final.jar netty-buffer-4.1.94.Fin
+ al.jar netty-codec-http2-4.1.94.Final.jar netty-resolver-dns-4.1.94.Fin
+ al.jar netty-codec-4.1.94.Final.jar netty-codec-socks-4.1.94.Final.jar 
+ jackson-annotations-2.11.3.jar netty-transport-native-unix-common-4.1.9
+ 4.Final.jar netty-resolver-4.1.94.Final.jar hazelcast-4.2.8.jar vertx-a
+ uth-common-4.4.4.jar vertx-hazelcast-4.4.4.jar netty-codec-http-4.1.94.
+ Final.jar netty-codec-dns-4.1.94.Final.jar netty-handler-4.1.94.Final.j
+ ar netty-tcnative-boringssl-static-2.0.34.Final.jar vertx-core-4.4.4.ja
+ r vertx-web-common-4.4.4.jar vertx-web-4.4.4.jar jackson-core-2.15.0.ja
+ r vertx-bridge-common-4.4.4.jar netty-common-4.1.94.Final.jar netty-tra
+ nsport-4.1.94.Final.jar
+

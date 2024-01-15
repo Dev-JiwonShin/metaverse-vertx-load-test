@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-test-v1-server</artifactId>
+    <version>4.4.4</version>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-ext</artifactId>
+            <version>37</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.11.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-tcnative-boringssl-static</artifactId>
+            <version>2.0.34.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-hazelcast</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-web</artifactId>
+            <version>4.4.4</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>shinji.SocketServer</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!--        <pluginManagement>-->
+        <!--            <plugins>-->
+        <!--                &lt;!&ndash; We specify the Maven compiler plugin as we need to set it to Java 1.8 &ndash;&gt;-->
+        <!--                <plugin>-->
+        <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                    <version>3.1</version>-->
+        <!--                    <configuration>-->
+        <!--                        <source>1.8</source>-->
+        <!--                        <target>1.8</target>-->
+        <!--                    </configuration>-->
+        <!--                </plugin>-->
+        <!--                <plugin>-->
+        <!--                    &lt;!&ndash; Build an executable JAR &ndash;&gt;-->
+        <!--                    <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                    <artifactId>maven-jar-plugin</artifactId>-->
+        <!--                    <version>3.1.0</version>-->
+        <!--                    <configuration>-->
+        <!--                        <archive>-->
+        <!--                            <manifest>-->
+        <!--&lt;!&ndash;                                <mainClass>${main.class}</mainClass>&ndash;&gt;-->
+        <!--                                <mainClass>shinji.SocketClient</mainClass>-->
+        <!--                            </manifest>-->
+        <!--                        </archive>-->
+        <!--                    </configuration>-->
+        <!--                </plugin>-->
+        <!--            </plugins>-->
+        <!--        </pluginManagement>-->
+        <!--        <plugins>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                <configuration>-->
+        <!--                    <source>11</source>-->
+        <!--                    <target>11</target>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
+    </build>
+
+    <profiles>
+        <profile>
+            <id>staging</id>
+            <repositories>
+                <repository>
+                    <id>staging</id>
+                    <url>https://oss.sonatype.org/content/repositories/iovertx-3905/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+</project>
