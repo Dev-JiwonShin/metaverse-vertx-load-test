@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class SocketClient {
+
     private static final String URL = "localhost";
     private static final int MAX_CLIENTS = 80;
     private static final int CLIENT_CREATION_INTERVAL_IN_MS = 100;

@@ -34,6 +34,7 @@ import static io.vertx.core.http.impl.HttpClientConnection.log;
 //    }
 //}
 
+
 public class SocketServer extends AbstractVerticle {
 
     private static final Set<ServerWebSocket> connectedClients = ConcurrentHashMap.newKeySet();
