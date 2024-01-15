@@ -14,11 +14,11 @@ public class SocketClient {
     private static final String URL = "localhost";
     private static final int MAX_CLIENTS = 80;
     private static final int CLIENT_CREATION_INTERVAL_IN_MS = 100;
-//    private static final int EMIT_INTERVAL_IN_MS = 25;
+    //    private static final int EMIT_INTERVAL_IN_MS = 25;
     private static final int EMIT_INTERVAL_IN_MS = 30;
-//    private static final int EMIT_INTERVAL_IN_MS = 33;
-    //    private static final int EMIT_INTERVAL_IN_MS = 50;
-    //  private static final int EMIT_INTERVAL_IN_MS = 1000;
+    //    private static final int EMIT_INTERVAL_IN_MS = 33;
+//    private static final int EMIT_INTERVAL_IN_MS = 50;
+//    private static final int EMIT_INTERVAL_IN_MS = 1000;
     private static final String PAYLOAD = "A".repeat(5 * 1024);
     private static final AtomicInteger connectedClientsCount = new AtomicInteger(0);
     private static final AtomicInteger createdClientsCount = new AtomicInteger(0);
